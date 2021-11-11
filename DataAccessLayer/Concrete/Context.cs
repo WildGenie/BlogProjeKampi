@@ -12,7 +12,8 @@ namespace DataAccessLayer.Concrete
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("server = (localdb)\\MSSQLLocalDB; database=CoreBlogDb; integrated security=true;");
+            optionsBuilder.UseSqlServer("server = (local); database=CoreBlogDb; User Id=SA;Password=MyPass@word;");
+            //Server=myServerAddress;Database=myDataBase;User Id=myUsername;Password=myPassword;
         }
 
         public DbSet<About> Abouts { get; set; }
